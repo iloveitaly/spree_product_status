@@ -1,0 +1,30 @@
+<%= render :partial => 'spree/admin/shared/product_sub_menu' %>
+<%= render :partial => 'spree/admin/shared/product_tabs', :locals => {:current => t(:statuses)} %>
+
+<table class="index sortable">
+  <tr>
+    <th><%= t(:status) %></th>
+    <th><%= t(:description) %></th>
+    <th> </th>
+  </tr>
+
+  <% @product.statuses.each do |status| %>
+    <tr id="<%= dom_id(status) %>">
+      <td>
+        <span class="handle"></span>
+        	<%= h status.status %>
+      </td>
+      <td><%= status.description %></td>
+      <td class="actions">
+        <%= link_to_with_icon('edit', t("edit"), edit_admin_product_product_status_url(@product, status), :class => 'edit') %>
+        &nbsp;
+        <%= link_to_delete status, {:url => admin_product_product_status_url(@product, status) }%>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<br/>
+<p>
+    <%= link_to icon('add') + ' ' + t(:new_status), new_admin_product_product_status_url(@product) %>
+</p>
