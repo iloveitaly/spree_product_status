@@ -10,6 +10,9 @@ module Spree
       },
       :out_of_stock => {
 
+      },
+      :unavailable => {
+        :purchasable => false
       }
     })    
 

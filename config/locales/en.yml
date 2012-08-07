@@ -4,3 +4,5 @@ en:
   product_status:
     pre_sale: Pre-Sale Item
     pre_order: Pre-Order Item
+    unavailable: Unavailable
+    out_of_stock: Out of Stock
