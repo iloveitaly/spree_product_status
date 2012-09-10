@@ -17,7 +17,7 @@ module Spree
     })    
 
     attr_accessible :description, :product, :status
-    belongs_to :product, :class_name => 'Spree::Product'
+    belongs_to :product, :class_name => 'Spree::Product', :touch => true
 
     def purchasable?
       STATUSES[status.to_sym][:purchasable].nil? || STATUSES[status.to_sym][:purchasable]
