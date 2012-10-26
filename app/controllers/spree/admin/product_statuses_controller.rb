@@ -4,16 +4,6 @@ module Spree
       before_filter :load_data
       before_filter :set_product, :only => [:create, :update]
 
-      def update_positions
-        params[:positions].each do |id, index|
-          Video.update_all(['position=?', index], ['id=?', id])
-        end
-
-        respond_to do |format|
-          format.js  { render :text => 'Ok' }
-        end
-      end
-
       private
   
       def location_after_save
