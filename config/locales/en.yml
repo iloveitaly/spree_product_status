@@ -1,5 +1,6 @@
 ---
 en:
+  new_status: New Status
   statuses: Statuses
   product_status:
     pre_sale: Pre-Sale Item

@@ -1,4 +1,4 @@
-<h1><%= t("new_video") %></h1>
+<h1><%= t(:new_status) %></h1>
 <%= form_for @product_status, :url => { :action => :create, :controller => 'product_statuses' } do |form| %>
   <table class="basic-table">
     <%= render :partial => "form", :locals => { :f => form } %>
