@@ -1,7 +1,6 @@
 module Spree
   class ProductStatus < ActiveRecord::Base
-    # this allows you to class_eval more status types
-    (STATUSES ||= {}).merge!({
+    STATUSES = {
       :pre_order => {
 
       },
@@ -14,7 +13,7 @@ module Spree
       :unavailable => {
         :purchasable => false
       }
-    })    
+    }  
 
     attr_accessible :description, :product, :status
     belongs_to :product, :class_name => 'Spree::Product', :touch => true
