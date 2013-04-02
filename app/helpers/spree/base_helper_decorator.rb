@@ -1,8 +1,11 @@
 Spree::BaseHelper.module_eval do
   def product_statuses_display(product, opts = {})
     statuses = product.statuses
-
-    statuses.reject! { |s| opts[:exclude].include? s.status.to_sym } if opts[:exclude]
+    
+    if opts[:exclude]
+      statuses = statuses.reject { |s| opts[:exclude].include? s.status.to_sym }
+    end
+    
     # more options here..
 
     statuses.map do |status|
