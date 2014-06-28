@@ -1,11 +1,19 @@
 SpreeProductStatus
 ==================
 
-This Spree Commerce extension adds a Status menu item to your product admin. Usage:  
+This Spree Commerce extension adds a status menu item to your product admin. Usage:  
 
 * Product statuses can have attributes that effect the display of the product. In the default statuses included the pre-sale item causes `Spree::Product.purchasable?` to be `false`. Attributes associated with these statuses can easily be modified via `Spree::ProductStatus::STATUSES`
 * Display status notifications associated with a product via `product_statuses_display` helper
 * `bundle exec rails g spree_product_status:install` to install database migration
+
+You can add custom statuses:
+
+``ruby
+Spree::ProductStatus::STATUSES[:reviewable_only] = {
+  :purchasable => false
+}
+```
 
 Testing
 -------
