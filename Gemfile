@@ -8,3 +8,5 @@ group :test do
     gem 'guard-rspec'
   end
 end
+
+gem 'spree', '~> 1.3.5'
